@@ -1,11 +1,10 @@
-package cadastro.pessoas.api;
+package cadastro.pessoas.api.entidades;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import cadastro.pessoas.api.entidades.Contato;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 public class Pessoa {
@@ -16,6 +15,9 @@ public class Pessoa {
     private String nome;
     private String cpf;
     private LocalDate dataNascimento;
+
+    @OneToMany
+    private List<Contato> contatos;
 
     public long getId() {
         return id;
@@ -47,5 +49,13 @@ public class Pessoa {
 
     public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
+    }
+
+    public List<Contato> getContatos() {
+        return contatos;
+    }
+
+    public void setContatos(List<Contato> contatos) {
+        this.contatos = contatos;
     }
 }

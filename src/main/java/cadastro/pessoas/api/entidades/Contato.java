@@ -7,9 +7,10 @@ import jakarta.persistence.Id;
 
 
 
-@Entity
+@Entity // é utilizada para informar que uma classe tambem é uma entidade.
 public class Contato {
 
+    // aadicionando colunas com o que o contato vai possuir.
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -17,6 +18,7 @@ public class Contato {
     private String telefone;
     private String email;
 
+//getters e setters
     public Long getId() {
         return id;
     }

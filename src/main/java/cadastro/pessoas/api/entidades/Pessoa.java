@@ -6,9 +6,9 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
-@Entity
+@Entity // utilizado para informar que uma classe tambem é uma entidade
 public class Pessoa {
-
+//o que a pessoa vai possuir.
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -16,6 +16,7 @@ public class Pessoa {
     private String cpf;
     private LocalDate dataNascimento;
 
+//getters e setters
     @OneToMany
     private List<Contato> contatos;
 
